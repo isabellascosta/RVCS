@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RVCS01.Class;
 
 namespace RVCS01
 {
@@ -20,6 +21,17 @@ namespace RVCS01
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+
+            Curso curso = new Curso();
+            var lista = curso.Listar();
+            foreach (var item in lista)
+            {
+                lsbCursos.Items.Add(item.Id +"-"+item.Nome);
+            }
         }
     }
 }
